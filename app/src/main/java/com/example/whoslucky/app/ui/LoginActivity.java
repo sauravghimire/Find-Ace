@@ -41,7 +41,7 @@ public class LoginActivity extends ActionBarActivity implements View.OnClickList
         String accessToken = sharedPreferences.getString(AppText.KEY_FB_ACCESS_TOKEN, "");
         simpleFacebook = SimpleFacebook.getInstance(this);
         if (simpleFacebook.isLogin() && simpleFacebook.getSession().getAccessToken().equals(accessToken)) {
-            startActivity(new Intent(LoginActivity.this, MainActivity.class));
+            startActivity(new Intent(LoginActivity.this, MainMenuActivity.class));
             finish();
         }
 
@@ -75,8 +75,10 @@ public class LoginActivity extends ActionBarActivity implements View.OnClickList
             case R.id.buttonSkipLogin:
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.putBoolean(AppText.KEY_IS_FB_LOGIN, false);
+                editor.putString(AppText.KEY_FB_USER_NAME, "");
+                editor.putString(AppText.KEY_FB_ACCESS_TOKEN, "");
                 editor.commit();
-                startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                startActivity(new Intent(LoginActivity.this, MainMenuActivity.class));
                 finish();
                 break;
         }
@@ -128,6 +130,7 @@ public class LoginActivity extends ActionBarActivity implements View.OnClickList
         super.onActivityResult(requestCode, resultCode, data);
         simpleFacebook.onActivityResult(this, requestCode, resultCode, data);
     }
+
     private OnProfileListener profileListener = new OnProfileListener() {
         @Override
         public void onComplete(Profile response) {
@@ -138,7 +141,7 @@ public class LoginActivity extends ActionBarActivity implements View.OnClickList
             editor.putBoolean(AppText.KEY_IS_FB_LOGIN, true);
             editor.commit();
             progressDialog.dismiss();
-            startActivity(new Intent(LoginActivity.this, MainActivity.class));
+            startActivity(new Intent(LoginActivity.this, MainMenuActivity.class));
             finish();
         }
 
