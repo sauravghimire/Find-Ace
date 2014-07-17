@@ -33,27 +33,34 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
     TextView cardId, life, score;
     Button use;
     Random random = new Random();
-    int randomInt = random.nextInt(8), lifeCount = 3, scoreCount = 0, aceCounter = 0;
+    int randomInt = random.nextInt(8), lifeCount = 3, scoreCount = 0, aceCounter = 0, highScoreCount;
     int[] imageArray = {R.drawable.club, R.drawable.spade, R.drawable.diamond, R.drawable.heartace, R.drawable.jack, R.drawable.spadejack, R.drawable.queen, R.drawable.king, R.drawable.joker};
     List<DTO> imageList1 = new ArrayList<DTO>();
     List<CheckDTO> checkList = new ArrayList<CheckDTO>();
     DTO dto;
     CheckDTO checkDTO;
     AnimatorSet animatorSet;
-    SharedPreferences sharedPreferences;
-    SharedPreferences.Editor editor;
+    SharedPreferences sharedPreferences,sharedPreferencesHighScore;
+    SharedPreferences.Editor editor,highScoreEditor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+
         setContentView(R.layout.activity_main);
         life = (TextView) findViewById(R.id.life);
         score = (TextView) findViewById(R.id.coin);
         use = (Button) findViewById(R.id.use);
         use.setOnClickListener(this);
         sharedPreferences = getSharedPreferences("SavingScore",0);
+        sharedPreferencesHighScore = getSharedPreferences("HighScore",0);
+        if(sharedPreferences.contains("HighScore")){
+            highScoreCount = sharedPreferences.getInt("HighScore",0);
+        }else{
+            highScoreCount = 0;
+        }
         if(sharedPreferences.contains("Score")){
             scoreCount = sharedPreferences.getInt("Score",0);
         }else{
@@ -142,6 +149,11 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
                         AppUtils.saveLifeAndScore(MainActivity.this,scoreCount,lifeCount);
                 AppUtils.holdAndStart(MainActivity.this,MainActivity.this);
             }else{
+                if(scoreCount>highScoreCount){
+                    highScoreEditor = sharedPreferencesHighScore.edit();
+                    highScoreEditor.putInt("HighScore",scoreCount);
+                    highScoreEditor.commit();
+                }
                 Handler handler = new Handler();
                 handler.postDelayed(new Runnable() {
                     @Override
