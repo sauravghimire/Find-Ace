@@ -22,4 +22,4 @@
     android:layout_height="50dip"
     android:layout_gravity="center_vertical"
     android:src="@drawable/com_facebook_profile_default_icon" />
-<!-- From: file:/home/susan/AndroidStudioProjects/practice/FindAce/Find-Ace/facebook/res/layout/com_facebook_picker_image.xml --><!-- From: file:/home/susan/AndroidStudioProjects/practice/FindAce/Find-Ace/simpleFacebook/build/intermediates/exploded-aar/Find-Ace/facebook/unspecified/res/layout/com_facebook_picker_image.xml -->
+<!-- From: file:/home/saurav/AndroidStudioProjects/WhosLucky/facebook/res/layout/com_facebook_picker_image.xml --><!-- From: file:/home/saurav/AndroidStudioProjects/WhosLucky/simpleFacebook/build/intermediates/exploded-aar/WhosLucky/facebook/unspecified/res/layout/com_facebook_picker_image.xml -->

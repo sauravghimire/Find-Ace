@@ -2,19 +2,19 @@
 <merger version="2" >
 
     <dataSet config="main" >
-        <source path="/home/susan/AndroidStudioProjects/practice/FindAce/Find-Ace/simpleFacebook/src/main/res" >
+        <source path="/home/saurav/AndroidStudioProjects/WhosLucky/simpleFacebook/src/main/res" >
             <file
-                path="/home/susan/AndroidStudioProjects/practice/FindAce/Find-Ace/simpleFacebook/src/main/res/values/strings.xml"
+                path="/home/saurav/AndroidStudioProjects/WhosLucky/simpleFacebook/src/main/res/values/strings.xml"
                 qualifiers="" >
                 <string name="app_name" >Simple Facebook
                 </string>
             </file>
         </source>
-        <source path="/home/susan/AndroidStudioProjects/practice/FindAce/Find-Ace/simpleFacebook/build/generated/res/rs/release" />
-        <source path="/home/susan/AndroidStudioProjects/practice/FindAce/Find-Ace/simpleFacebook/build/generated/res/generated/release" />
+        <source path="/home/saurav/AndroidStudioProjects/WhosLucky/simpleFacebook/build/generated/res/rs/release" />
+        <source path="/home/saurav/AndroidStudioProjects/WhosLucky/simpleFacebook/build/generated/res/generated/release" />
     </dataSet>
     <dataSet config="release" >
-        <source path="/home/susan/AndroidStudioProjects/practice/FindAce/Find-Ace/simpleFacebook/src/release/res" />
+        <source path="/home/saurav/AndroidStudioProjects/WhosLucky/simpleFacebook/src/release/res" />
     </dataSet>
 
 </merger>
