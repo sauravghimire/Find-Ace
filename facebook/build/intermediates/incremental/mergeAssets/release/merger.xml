@@ -2,10 +2,10 @@
 <merger version="2" >
 
     <dataSet config="main" >
-        <source path="/home/susan/AndroidStudioProjects/practice/FindAce/Find-Ace/facebook/src/main/assets" />
+        <source path="/home/saurav/AndroidStudioProjects/WhosLucky/facebook/src/main/assets" />
     </dataSet>
     <dataSet config="release" >
-        <source path="/home/susan/AndroidStudioProjects/practice/FindAce/Find-Ace/facebook/src/release/assets" />
+        <source path="/home/saurav/AndroidStudioProjects/WhosLucky/facebook/src/release/assets" />
     </dataSet>
 
 </merger>

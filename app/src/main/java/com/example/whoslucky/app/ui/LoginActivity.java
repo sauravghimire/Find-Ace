@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -32,6 +33,7 @@ public class LoginActivity extends ActionBarActivity implements View.OnClickList
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
         setContentView(R.layout.layout_login_acitivity);
 
         simpleFacebook = SimpleFacebook.getInstance(this);
@@ -63,13 +65,11 @@ public class LoginActivity extends ActionBarActivity implements View.OnClickList
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.buttonFacebookLogin:
-                if (!simpleFacebook.isLogin()) {
-                    progressDialog.setCancelable(false);
-                    progressDialog.setCanceledOnTouchOutside(false);
-                    progressDialog.setMessage("Logging In");
-                    progressDialog.show();
-                    simpleFacebook.login(loginListener);
-                }
+                progressDialog.setCancelable(false);
+                progressDialog.setCanceledOnTouchOutside(false);
+                progressDialog.setMessage("Logging In");
+                progressDialog.show();
+                simpleFacebook.login(loginListener);
                 break;
 
             case R.id.buttonSkipLogin:
@@ -106,21 +106,24 @@ public class LoginActivity extends ActionBarActivity implements View.OnClickList
 
         @Override
         public void onNotAcceptingPermissions(Permission.Type type) {
+            Log.i("onNotAcceptingPermissions", type.toString());
             progressDialog.dismiss();
         }
 
         @Override
         public void onThinking() {
-
+            Log.i("onThinking", "onThinking");
         }
 
         @Override
         public void onException(Throwable throwable) {
+            Log.i("onException", throwable.toString());
             progressDialog.dismiss();
         }
 
         @Override
         public void onFail(String reason) {
+            Log.i("onFail", reason);
             progressDialog.dismiss();
         }
     };
@@ -141,6 +144,7 @@ public class LoginActivity extends ActionBarActivity implements View.OnClickList
             editor.putBoolean(AppText.KEY_IS_FB_LOGIN, true);
             editor.commit();
             progressDialog.dismiss();
+            overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
             startActivity(new Intent(LoginActivity.this, MainMenuActivity.class));
             finish();
         }

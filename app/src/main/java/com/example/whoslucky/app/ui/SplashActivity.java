@@ -28,6 +28,7 @@ public class SplashActivity extends ActionBarActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
+                overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
                 startActivity(new Intent(SplashActivity.this, LoginActivity.class));
                 finish();
             }

@@ -12,12 +12,14 @@ import com.example.whoslucky.app.R;
 /**
  * Created by saurav on 7/17/14.
  */
-public class MainMenuActivity extends Activity implements View.OnClickListener{
+public class MainMenuActivity extends Activity implements View.OnClickListener {
 
-    Button buttonPlay,buttonInstruction,buttonHighScore,buttonExit;
+    Button buttonPlay, buttonInstruction, buttonHighScore, buttonExit;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
         setContentView(R.layout.main_menu);
         buttonPlay = (Button) findViewById(R.id.button_play);
         buttonInstruction = (Button) findViewById(R.id.button_instruction);
@@ -28,7 +30,7 @@ public class MainMenuActivity extends Activity implements View.OnClickListener{
 
     @Override
     public void onClick(View view) {
-        switch(view.getId()){
+        switch (view.getId()) {
             case R.id.button_play:
                 Intent gameStart = new Intent(MainMenuActivity.this, MainActivity.class);
                 startActivity(gameStart);
