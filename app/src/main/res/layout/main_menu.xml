@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+    <Button
+        android:id="@+id/button_play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" PLAY "
+        android:background="@drawable/selector_menu_button"
+        android:layout_margin="10dp"
+        android:padding="4dp"/>
+    <Button
+        android:id="@+id/button_instruction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" INSTRUCTION "
+        android:background="@drawable/selector_menu_button"
+        android:layout_margin="10dp"
+        android:padding="4dp"/>
+    <Button
+        android:id="@+id/button_high"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" HIGH SCORE "
+        android:background="@drawable/selector_menu_button"
+        android:layout_margin="10dp"
+        android:padding="4dp"/>
+    <Button
+        android:id="@+id/button_exit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" EXIT "
+        android:background="@drawable/selector_menu_button"
+        android:layout_margin="10dp"
+        android:padding="4dp"/>
+
+</LinearLayout>

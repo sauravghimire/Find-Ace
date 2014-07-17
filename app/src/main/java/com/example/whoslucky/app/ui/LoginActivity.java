@@ -29,6 +29,8 @@ public class LoginActivity extends ActionBarActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_login_acitivity);
 
+        simpleFacebook = SimpleFacebook.getInstance(this);
+
         progressDialog = new ProgressDialog(this);
         sharedPreferences = getSharedPreferences("FB_REG", 0);
 
@@ -37,6 +39,12 @@ public class LoginActivity extends ActionBarActivity implements View.OnClickList
 
         buttonSkipLogin = (Button) findViewById(R.id.buttonSkipLogin);
         buttonSkipLogin.setOnClickListener(this);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        simpleFacebook = SimpleFacebook.getInstance(this);
     }
 
     @Override
@@ -88,4 +96,10 @@ public class LoginActivity extends ActionBarActivity implements View.OnClickList
             progressDialog.dismiss();
         }
     };
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        simpleFacebook.onActivityResult(this,requestCode,resultCode,data);
+    }
 }

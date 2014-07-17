@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- From: file:/home/susan/AndroidStudioProjects/practice/FindAce/Find-Ace/simpleFacebook/build/intermediates/exploded-aar/Find-Ace/facebook/unspecified/res/values/values.xml -->
+    <!-- From: file:/home/saurav/AndroidStudioProjects/WhosLucky/simpleFacebook/build/intermediates/exploded-aar/WhosLucky/facebook/unspecified/res/values/values.xml -->
     <eat-comment />
 
     <color name="com_facebook_blue">#3B5998</color>
@@ -62,11 +62,11 @@
     <dimen name="com_facebook_usersettingsfragment_profile_picture_width">64dp</dimen>
 
     <drawable name="com_facebook_picker_default_separator_color">#33464c59</drawable>
-    <!-- From: file:/home/susan/AndroidStudioProjects/practice/FindAce/Find-Ace/simpleFacebook/src/main/res/values/strings.xml -->
+    <!-- From: file:/home/saurav/AndroidStudioProjects/WhosLucky/simpleFacebook/src/main/res/values/strings.xml -->
     <eat-comment />
 
     <string name="app_name">Simple Facebook</string>
-    <!-- From: file:/home/susan/AndroidStudioProjects/practice/FindAce/Find-Ace/simpleFacebook/build/intermediates/exploded-aar/Find-Ace/facebook/unspecified/res/values/values.xml -->
+    <!-- From: file:/home/saurav/AndroidStudioProjects/WhosLucky/simpleFacebook/build/intermediates/exploded-aar/WhosLucky/facebook/unspecified/res/values/values.xml -->
     <eat-comment />
 
     <string name="com_facebook_choose_friends">Choose Friends</string>
