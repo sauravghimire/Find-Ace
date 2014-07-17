@@ -3,7 +3,6 @@ package com.example.whoslucky.app;
 import android.animation.Animator;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
-import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -17,11 +16,16 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.whoslucky.app.adapter_listener.Adapter;
+import com.example.whoslucky.app.gamedto.CheckDTO;
+import com.example.whoslucky.app.gamedto.DTO;
+import com.example.whoslucky.app.ui.GameOver;
+import com.example.whoslucky.app.utils.AppUtils;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Random;
-import java.util.logging.LogRecord;
 
 
 public class MainActivity extends ActionBarActivity implements AdapterView.OnItemClickListener, View.OnClickListener {
@@ -130,7 +134,7 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
             checkDTO = new CheckDTO(true, true, imageList1.get(i).getId());
             checkList.add(checkDTO);
             if (aceCounter == 4) {
-                AppUtils.saveLifeAndScore(MainActivity.this,scoreCount,lifeCount);
+                AppUtils.saveLifeAndScore(MainActivity.this, scoreCount, lifeCount);
                 AppUtils.holdAndStart(MainActivity.this,MainActivity.this);
                 Toast.makeText(this, "Congratulations", Toast.LENGTH_LONG).show();
             }
