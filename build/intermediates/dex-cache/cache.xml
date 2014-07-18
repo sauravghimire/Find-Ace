@@ -2,34 +2,16 @@
 <pre-dex-items>
 
     <item
-        dex="/home/saurav/AndroidStudioProjects/WhosLucky/app/build/intermediates/pre-dexed/debug/classes-5d0e288fb68116c3adf6ebf7034f1d47b60ab7fe.jar"
-        jar="/home/saurav/AndroidStudioProjects/WhosLucky/app/build/intermediates/exploded-aar/WhosLucky/simpleFacebook/unspecified/classes.jar"
+        dex="/home/susan/AndroidStudioProjects/practice/FindAce/Find-Ace/app/build/intermediates/pre-dexed/debug/classes-9b867382b5c7323223be7e7c6022cce1bcf2768e.jar"
+        jar="/home/susan/AndroidStudioProjects/practice/FindAce/Find-Ace/app/build/intermediates/exploded-aar/Find-Ace/facebook/unspecified/classes.jar"
         jumboMode="false"
         revision="19.1.0"
-        sha1="bc56571f272cbff44fa96b00794b216acbc39bce"/>
+        sha1="59297352a5aca35e2e426d77a7af47d6ad4f2463"/>
     <item
-        dex="/home/saurav/AndroidStudioProjects/WhosLucky/app/build/intermediates/pre-dexed/debug/classes-0d069577dc0052b5161f5c23f1335f04d9d49027.jar"
-        jar="/home/saurav/AndroidStudioProjects/WhosLucky/app/build/intermediates/exploded-aar/WhosLucky/facebook/unspecified/classes.jar"
+        dex="/home/susan/AndroidStudioProjects/practice/FindAce/Find-Ace/app/build/intermediates/pre-dexed/debug/classes-ade4fccb241c802f6c8f2c9eb12c46b973dfd8bd.jar"
+        jar="/home/susan/AndroidStudioProjects/practice/FindAce/Find-Ace/app/build/intermediates/exploded-aar/Find-Ace/simpleFacebook/unspecified/classes.jar"
         jumboMode="false"
         revision="19.1.0"
-        sha1="eefa84b6794c9fd5733ae83f627ebddfda29eff5"/>
-    <item
-        dex="/home/saurav/AndroidStudioProjects/WhosLucky/app/build/intermediates/pre-dexed/debug/support-v4-19.1.0-bbccd5d4e7f8b04bbcc96cb3cad8ca91425782b5.jar"
-        jar="/home/saurav/dev/android-studio/sdk/extras/android/m2repository/com/android/support/support-v4/19.1.0/support-v4-19.1.0.jar"
-        jumboMode="false"
-        revision="19.1.0"
-        sha1="85f201b380937e61a9dce6ca90ccf6872abbfb67"/>
-    <item
-        dex="/home/saurav/AndroidStudioProjects/WhosLucky/app/build/intermediates/pre-dexed/debug/bolts-73049166a97af7cc0ac495d55575acb9be0bbe1a.jar"
-        jar="/home/saurav/AndroidStudioProjects/WhosLucky/app/build/intermediates/exploded-aar/WhosLucky/facebook/unspecified/libs/bolts.jar"
-        jumboMode="false"
-        revision="19.1.0"
-        sha1="1e5ba33c837d05dcca9dc40a0ab458f8599d7aef"/>
-    <item
-        dex="/home/saurav/AndroidStudioProjects/WhosLucky/app/build/intermediates/pre-dexed/debug/classes-a5bad7a5f31d42d1cee8767811b7e8df7d38c0da.jar"
-        jar="/home/saurav/AndroidStudioProjects/WhosLucky/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/19.1.0/classes.jar"
-        jumboMode="false"
-        revision="19.1.0"
-        sha1="3499ceba05ca1f6037c6a2fad73df8f636224a28"/>
+        sha1="158e8677ca9b062848ab5655a02b6ee7540776fc"/>
 
 </pre-dex-items>

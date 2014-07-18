@@ -8,6 +8,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.ActionBarActivity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -44,35 +45,37 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
     DTO dto;
     CheckDTO checkDTO;
     AnimatorSet animatorSet;
-    SharedPreferences sharedPreferences,sharedPreferencesHighScore;
-    SharedPreferences.Editor editor,highScoreEditor;
+    SharedPreferences sharedPreferences, sharedPreferencesHighScore;
+    SharedPreferences.Editor editor, highScoreEditor;
+    private View view;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
-
-        setContentView(R.layout.activity_main);
+        view = ((LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE))
+                .inflate(R.layout.activity_main, null);
+        setContentView(view);
         life = (TextView) findViewById(R.id.life);
         score = (TextView) findViewById(R.id.coin);
         use = (Button) findViewById(R.id.use);
         use.setOnClickListener(this);
-        sharedPreferences = getSharedPreferences("SavingScore",0);
-        sharedPreferencesHighScore = getSharedPreferences("HighScore",0);
-        if(sharedPreferences.contains("HighScore")){
-            highScoreCount = sharedPreferences.getInt("HighScore",0);
-        }else{
+        sharedPreferences = getSharedPreferences("SavingScore", 0);
+        sharedPreferencesHighScore = getSharedPreferences("HighScore", 0);
+        if (sharedPreferences.contains("HighScore")) {
+            highScoreCount = sharedPreferences.getInt("HighScore", 0);
+        } else {
             highScoreCount = 0;
         }
-        if(sharedPreferences.contains("Score")){
-            scoreCount = sharedPreferences.getInt("Score",0);
-        }else{
+        if (sharedPreferences.contains("Score")) {
+            scoreCount = sharedPreferences.getInt("Score", 0);
+        } else {
             scoreCount = 0;
         }
-        if(sharedPreferences.contains("Life")){
-            lifeCount = sharedPreferences.getInt("Life",0);
-        }else{
+        if (sharedPreferences.contains("Life")) {
+            lifeCount = sharedPreferences.getInt("Life", 0);
+        } else {
             lifeCount = 3;
         }
         for (int i = 0; i < imageArray.length; i++) {
@@ -93,8 +96,8 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
         adapter = new Adapter(this, R.layout.single, imageList1);
         gridView.setAdapter(adapter);
         gridView.setOnItemClickListener(this);
-        life.setText(""+lifeCount);
-        score.setText(""+scoreCount);
+        life.setText("" + lifeCount);
+        score.setText("" + scoreCount);
 
     }
 
@@ -142,27 +145,29 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
             checkList.add(checkDTO);
             if (aceCounter == 4) {
                 AppUtils.saveLifeAndScore(MainActivity.this, scoreCount, lifeCount);
-                AppUtils.holdAndStart(MainActivity.this,MainActivity.this);
+                AppUtils.holdAndStart(MainActivity.this, MainActivity.this);
                 Toast.makeText(this, "Congratulations", Toast.LENGTH_LONG).show();
             }
         }
         if (imageList1.get(i).getId() == 8) {
             Toast.makeText(this, "JOKER", Toast.LENGTH_LONG).show();
+            AppUtils.zoomview(this, view, imageView1, R.drawable.joker);
+            gridView.setVisibility(View.INVISIBLE);
             lifeCount--;
-            if(lifeCount!=0){
-                        AppUtils.saveLifeAndScore(MainActivity.this,scoreCount,lifeCount);
-                AppUtils.holdAndStart(MainActivity.this,MainActivity.this);
-            }else{
-                if(scoreCount>highScoreCount){
+            if (lifeCount != 0) {
+                AppUtils.saveLifeAndScore(MainActivity.this, scoreCount, lifeCount);
+                AppUtils.holdAndStart(MainActivity.this, MainActivity.this);
+            } else {
+                if (scoreCount > highScoreCount) {
                     highScoreEditor = sharedPreferencesHighScore.edit();
-                    highScoreEditor.putInt("HighScore",scoreCount);
+                    highScoreEditor.putInt("HighScore", scoreCount);
                     highScoreEditor.commit();
                 }
                 Handler handler = new Handler();
                 handler.postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        Intent refresh = new Intent(MainActivity.this,GameOver.class);
+                        Intent refresh = new Intent(MainActivity.this, GameOver.class);
                         overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
                         startActivity(refresh);
                         finish();
